@@ -13,14 +13,14 @@ jobs:
       # Set up Java environment
       - uses: actions/setup-java@v3
         with:
-          java-version: '17'
+          java-version: '11'
           distribution: 'temurin'
           cache: maven
 
       # Build the Maven project
       - name: Build Maven
-        run: mvn -B package --file pom.xml
-
+        run: mvn clean package
+        
       # Copy the JAR file to a staging directory
       - name: Prepare Artifact
         run: mkdir staging && cp target/*.jar staging
