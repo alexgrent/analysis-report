@@ -6,7 +6,7 @@
 
     <groupId>org.reactome.server.tools</groupId>
     <artifactId>analysis-report</artifactId>
-    <version>1.2.8</version>
+    <version>1.10.0</version>
     <packaging>jar</packaging>
 
     <parent>
@@ -131,6 +131,20 @@
             </snapshots>
         </repository>
     </repositories>
+
+<distributionManagement>
+        <repository>
+            <id>local-nexus-repo</id>
+            <name>Local Nexus Release Repository</name>
+            <url>http://localhost:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>local-nexus-snapshot-repo</id>
+            <name>Local Nexus Snapshot Repository</name>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 
 
     <!--This configuration is needed so that javadoc is included in maven site-->
